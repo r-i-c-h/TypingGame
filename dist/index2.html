@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Traversy Typing Tryout</title>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Roboto" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1 id="top-title">Traversy's Terrific Typing Test</h1>
+    <h3 class="subtitle">How fast can you go? - Think you can beat Brad?</h3>
+  </header>
+
+  <div class="modal-full-overlay">
+    <div class="modal__box game-over-message hidden"></div>
+
+    <div class="modal__box">
+      <button class="modal__button" id="start-button" aria-selected="true" autofocus>Press Enter to Start</button>
+    </div>
+
+    <div class="modal__box high-scores-box">
+      <h3 class="modal__box--title">HIGH SCORES:</h3>
+      <div class="modal__box high-scores">
+        <table id="high-scores-table"></table>
+      </div>
+    </div>
+    <div class="modal__box" id="instructions-trigger">
+      <button class="modal__button">Click for Instructions</button>
+    </div>
+    <div class="modal__box hidden" id="instructions-box">
+      <h3 class="modal__box--title">Instructions:</h3>
+      <p class="directions">Try to correctly type as many words as you can before time runs out.</p>
+      <p class="directions">For every correct word you type, you'll get +1 point and a little more time added to the clock.</p>
+      <p class="directions">But watch out - each level starts with less time per word and rewards you with less time for each correct word.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Level Init Information -->
+    <div class="box">
+      <div class="info">
+        <p>LEVEL
+          <span class="info-span" id="info__level">1</span>
+          STARTS WITH
+          <span class="info-span" id="info__time">7</span>
+          SECONDS PER WORD
+        </p>
+        <div class="var-box time-box">
+          <h3>Time Left:
+            <span id="time"></span> Seconds
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Word & Input -->
+    <div class="gamebox">
+      <h2 id="current-word"></h2>
+      <input type="text" class="input-form" placeholder="..." id="word-input" autofocus>
+      <h4 id="status"></h4>
+    </div>
+
+    <!-- Time & Score -->
+    <div class="variables-display">
+      <div class="var-box score-box">
+        <h3>Score:
+          <span id="score">0</span>
+        </h3>
+      </div>
+    </div>
+
+    <!-- High Score -->
+  </div>
+
+  <script src="js/rework.js"></script>
+  <script src="js/highScores.js"></script>
+  <script src="js/gameLogic.js"></script>
+</body>
+
+</html>
