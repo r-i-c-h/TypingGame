@@ -1,28 +1,20 @@
-window.addEventListener('load', setup);
-// DOM Elements
-const wordInputField = document.querySelector('#word-input');
-const currentWord = document.querySelector('#current-word');
-
-const dispScore = document.querySelector('#score');
-const dispTimeRemaining = document.querySelector('#time');
-const dispLvl = document.querySelector('#info__level');
-const dispLvlStartTime = document.querySelector('#info__time');
-const instructionsBox = document.querySelector('#instructions-box');
-const instructionsTrigger = document.querySelector('#instructions-trigger');
-const message = document.querySelector('#status');
-const modalBackground = document.querySelector('.modal-full-overlay');
+// window.addEventListener('load', setup);
+// window.addEventListener('load', startGame);
 
 function setup() {
-  modalBackground.classList.remove('hidden');
-  getHighScores();
+  modalForStartScreen.classList.remove('hidden');
+  modalForNewHighScore.classList.add('hidden');
+  displayHighScores();
   instructionsTrigger.addEventListener('click', showInstructions);
   window.addEventListener('keyup', enterToStart);
+  startButton.addEventListener('click', enterToStart);
 }
 
 function clearModal() {
   instructionsTrigger.removeEventListener('click', showInstructions);
   window.removeEventListener('keyup', enterToStart);
-  modalBackground.classList.add('hidden');
+  startButton.removeEventListener('click', enterToStart);
+  modalForStartScreen.classList.add('hidden');
 }
 
 function showInstructions() {
@@ -32,7 +24,8 @@ function showInstructions() {
 
 function enterToStart(e) {
   e.preventDefault();
-  if (event.keyCode === 13) {
+  if (event.keyCode === 13 || e.type==='click') {
     clearModal();
+    startGame();
   }
 }
