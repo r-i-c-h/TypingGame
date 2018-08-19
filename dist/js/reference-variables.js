@@ -16,11 +16,12 @@ const wordInputField = document.querySelector('#word-input');
 
 /* GLOBALS */
 let alreadyPlayed = false;
+let isPlaying;
+let gameLoopInt;
 let newHS = false;
+let time = 10;
 let score = 0;
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+let level = L1;
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 const words = [
   'hat',
@@ -62,28 +63,9 @@ const phrases = [
 ];
 
 const levelsObj = {
-  L1: { time: 10, add: 1000 },
-  L2: { time: 8, add: 800 },
-  L3: { time: 5, add: 500 },
-  L4: { time: 3, add: 300 },
-  L5: { time: 1, add: 100 }
+  1: { time: 10, add: 1000 },
+  2: { time: 8, add: 800 },
+  3: { time: 5, add: 500 },
+  4: { time: 3, add: 300 },
+  5: { time: 1, add: 100 }
 };
-
-let time = 2;
-let level = 1;
-let score = 0;
-let gameLoopInt;
-let isPlaying;
-
-const levelsObj = {
-  L1: { time: 10, add: 1000 },
-  L2: { time: 8, add: 800 },
-  L3: { time: 5, add: 500 },
-  L4: { time: 3, add: 300 },
-  L5: { time: 1, add: 100 }
-};
-
-let time = 2;
-let level = 1;
-let gameLoopInt;
-let isPlaying;
